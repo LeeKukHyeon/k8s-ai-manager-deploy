@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-ai-manager
+  labels:
+    app: k8s-ai-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-ai-manager
+  template:
+    metadata:
+      labels:
+        app: k8s-ai-manager
+    spec:
+      containers:
+        - name: k8s-ai-manager
+          image: YOUR_DOCKERHUB_ID/k8s-ai-manager:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: openai-secret
+                  key: apiKey
