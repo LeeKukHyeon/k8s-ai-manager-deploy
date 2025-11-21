@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: k8s-ai-manager
-          image: registry.internal.local:5000/k8s-ai-manager:latest
+          image: lkh8150/docker:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8000
