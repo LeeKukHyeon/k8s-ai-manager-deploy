@@ -7,7 +7,7 @@ metadata:
   annotations:
   # Image Updater가 모니터링할 이미지와 업데이트 전략 지정
     argocd-image-updater.argoproj.io/image-list: lkh8150/docker
-    argocd-image-updater.argoproj.io/k8s-ai-manager.update-strategy: latest
+    argocd-image-updater.argoproj.io/k8s-ai-manager.update-strategy: digest
 spec:
   replicas: 1
   selector:
