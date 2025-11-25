@@ -4,6 +4,10 @@ metadata:
   name: k8s-ai-manager
   labels:
     app: k8s-ai-manager
+    annotations:
+    # Image Updater가 모니터링할 이미지와 업데이트 전략 지정
+      argocd-image-updater.argoproj.io/image-list: lkh8150/docker
+      argocd-image-updater.argoproj.io/k8s-ai-manager.update-strategy: latest
 spec:
   replicas: 1
   selector:
