@@ -18,6 +18,8 @@ spec:
       labels:
         app: k8s-ai-manager
     spec:
+      nodeSelector:
+        node: worker2 
       containers:
         - name: k8s-ai-manager
           image: lkh8150/docker:latest
