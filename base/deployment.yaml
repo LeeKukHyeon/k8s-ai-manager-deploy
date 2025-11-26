@@ -30,3 +30,18 @@ spec:
                 secretKeyRef:
                   name: openai-secret
                   key: apiKey
+            - name: DOCKERHUB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: ci-cd-secrets
+                  key: DOCKERHUB_USERNAME
+            - name: DOCKERHUB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: ci-cd-secrets
+                  key: DOCKERHUB_PASSWORD
+            - name: GITHUB_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: ci-cd-secrets
+                  key: GITHUB_TOKEN
